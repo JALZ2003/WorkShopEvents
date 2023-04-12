@@ -1,0 +1,18 @@
+.card-body > div{
+    margin-top: 5px;
+}
+
+.card-body > p{
+    background-color: #BFC0C0;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.card-body > a{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-check-input {
+    border: 2px solid black;
+}

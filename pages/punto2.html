@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../Assets/main.css">
+
+    <!-- Punto2 CSS -->
+    <link rel="stylesheet" href="../Assets/punto2.css">
+
+    <title> Punto 2</title>
+</head>
+
+<body>
+    <nav>
+        <a href="home.html"> Home </a>
+        <a href="punto1.html"> Punto 1 </a>
+        <a href="#"> Punto 2 </a>
+        <a href="punto3.html"> Punto 3 </a>
+        <div class="animation start-two"></div>
+    </nav>
+
+    <div class="converter">
+        <h1> Currency Converter </h1>
+        <div class="input-group">
+            <label for="from"> From: </label>
+            <select name="from" id="from"></select>
+            <input type="number" id="amount" placeholder="amount">
+        </div>
+        <div class="input-group">
+            <label for="to"> To: </label>
+            <select name="to" id="to"></select>
+            <input type="text" id="result" readonly>
+        </div>
+        <button id="convert"> Convert </button>
+    </div>
+
+    <script src="../JS/punto2.js"></script>
+</body>
+
+</html>
