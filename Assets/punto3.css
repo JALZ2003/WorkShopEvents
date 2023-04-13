@@ -1,18 +1,197 @@
-.card-body > div{
+.messageEmpty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+}
+
+.card {
+    width: 200px;
+    height: 200px;
+    margin: 30px;
+}
+
+.card-body>div {
     margin-top: 5px;
 }
 
-.card-body > p{
+.card-body>p {
     background-color: #BFC0C0;
     margin-top: 25px;
     margin-bottom: 25px;
 }
 
-.card-body > a{
+.card-body>a {
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .form-check-input {
     border: 2px solid black;
+}
+
+.content {
+    width: 60%;
+    /* height: 60%; */
+    padding: 20px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.addNotes {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: 1px solid white;
+    margin: 20px;
+    box-shadow: 3px 3px 8px white;
+}
+
+.inputs {
+    display: flex;
+    width: 100%;
+}
+
+.inputs>div {
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 8px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.inputs>div>input,
+textarea {
+    margin: 5px;
+    border: none;
+    position: relative;
+    outline: none;
+    color: white;
+    background: none;
+    background-image: linear-gradient(to right, white, white);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    transition: background-size 0.3s ease-in-out;
+}
+
+.inputs>div>input:hover,
+.inputs>div>input:focus,
+textarea:hover,
+textarea:focus {
+    background-size: 100% 3px;
+}
+
+.inputs>div>input::before,
+textarea::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}
+
+.inputs>div>input:hover::before,
+.inputs>div>input:focus::before,
+textarea:hover::before,
+textarea:focus::before {
+    transform: scaleX(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.save,
+.delete {
+    margin: 5px;
+    font-size: 18px;
+    height: 40px;
+    border: 2px solid white;
+    background: none;
+    color: white;
+}
+
+.save:hover,
+.delete:hover {
+    background-color: white;
+    color: black;
+}
+
+.save:active,
+.delete:active {
+    background-color: red;
+    color: white;
+}
+
+h1 {
+    margin: 10px;
+}
+
+.alert {
+    text-align: center;
+    color: red;
+    margin: 0;
+}
+
+.inactive {
+    display: none;
+}
+
+.filters {
+    width: 97%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: 2px solid white;
+    border-radius: 8px;
+}
+
+.search {
+    width: 50%;
+    text-align: center;
+    margin: 5px;
+    border: none;
+    position: relative;
+    outline: none;
+    color: white;
+    background: none;
+    background-image: linear-gradient(to right, white, white);
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 0% 3px;
+    transition: background-size 0.3s ease-in-out;
+}
+
+.search:hover,
+.search:focus {
+    background-size: 100% 3px;
+}
+
+.search::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+}
+
+.search:hover::before,
+.search:focus::before {
+    transform: scaleX(1);
+    transition: transform 0.3s ease-in-out;
 }

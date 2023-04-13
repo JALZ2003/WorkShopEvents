@@ -23,6 +23,7 @@
 }
 
 .input-group select {
+    color: white;
     font-family: 'Comic Sans MS', sans-serif;
     width: 160px;
     padding: 5px;
@@ -108,8 +109,13 @@ input#amount:focus::before {
 }
 
 input#result {
+    color: white;
     border: none;
     outline: none;
     border-bottom: 3px solid #4CAF50;
     background: none;
+}
+
+option {
+    background-color: black;
 }

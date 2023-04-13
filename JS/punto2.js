@@ -31,6 +31,7 @@ function populateSelects() {
 
 function cargar(){
     let random = parseInt(Math.random() * count.length);
+    console.log(count[random]);
     const fromCurrency = fromSelect.value;
     toSelect.value = [count[random]];
     amountInpunt.value = rates[fromCurrency];

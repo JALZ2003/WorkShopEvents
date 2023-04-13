@@ -20,7 +20,6 @@
 </head>
 
 <body>
-
     <nav>
         <a href="home.html"> Home </a>
         <a href="punto1.html"> Punto 1 </a>
@@ -29,17 +28,30 @@
         <div class="animation start-three"></div>
     </nav>
 
-    <div class="container">
-        <div class="card text-center mb-3" style="width: 18rem;">
-            <div class="card-body">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1"> Name Task </label>
-                </div>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <button type="button" class="btn btn-danger"> Borrar Nota </button>
+    <div class="addNotes">
+        <h1> Nueva Nota </h1>
+        <div class="inputs">
+            <div>
+                <input class="title" type="text" placeholder="Title">
+                <textarea name="text" id="text" cols="30" rows="5" placeholder="Write your text here"></textarea>
+            </div>
+            <div>
+                <button class="save" type="button"> Save </button>
+                <button class="delete" type="button"> Delete </button>
+                <div class="alert inactive"> The Fields are Empty </div>
             </div>
         </div>
+        <div class="filters">
+            <input class="search" type="text" placeholder="Search">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                <label class="form-check-lable" for="flexSwitchCheckDefault"> Done </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+
     </div>
 
     <!-- JS Boostrap -->
