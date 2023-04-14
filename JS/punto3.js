@@ -45,8 +45,7 @@ function createNote(id, title, text, done) {
         "<div class=\"form-check form-check-inline\">\n" +
         "<input id=" + id + " class=\"form-check-input\" onclick=markmade(id) type=\"checkbox\"" + (done ? "checked" : "") + ">\n" +
         "<label class=\"form-check-label\" for=\"inlineCheckbox1\">" + title + "</label>\n" +
-        "</div>\n" +
-        "<p class=\"card-text\">" + text + "</p>\n" +
+        "</div>\n" + (done ? "<p class=\"card-text\"><s>" + text + "</s></p>\n" : "<p class=\"card-text\">" + text + "</p>\n") +
         "<button id=" + id + " type=\"button\" class=\"btn btn-danger\" onclick=clearNote(id)" +
         "> Borrar Nota </button>\n" +
         "</div>\n" +
@@ -144,4 +143,3 @@ let isDone = () => { return done.checked };
 let wordSearch = (word, wordsNote) => { return (lowercaseWord(wordsNote.title).includes(lowercaseWord(word))) || (lowercaseWord(wordsNote.text).includes(lowercaseWord(word))); };
 
 let lowercaseWord = (word) => { return word.toLowerCase(); };
-
