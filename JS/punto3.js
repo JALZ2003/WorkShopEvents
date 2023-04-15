@@ -93,7 +93,7 @@ function addNote() {
 function markmade(id) {
     let note = notes.find(n => n.ID == id);
     note.done = (note.done) ? false : true;
-    insertNote(notes);
+    insertNote(filters(notes));
 }
 
 function clearNote(id) {
@@ -104,7 +104,7 @@ function clearNote(id) {
             break;
         }
     }
-    insertNote(notes);
+    insertNote(filters(notes));
 }
 
 function removeElements() {

@@ -10,6 +10,19 @@ const convertButton = document.getElementById('convert');
 let rates;
 let count = [];
 
+
+amountInpunt.addEventListener('input', () => {
+    convertCurrency(amountInpunt, fromSelect, toSelect, resultInpunt);
+});
+
+resultInpunt.addEventListener('input', () => {
+    convertCurrency(resultInpunt, toSelect, fromSelect, amountInpunt);
+});
+
+fromSelect.addEventListener('change', () => { selects(fromSelect, toSelect) });
+
+toSelect.addEventListener('change', () => { selects(fromSelect, toSelect) });
+
 // Obtenemos las tasas de cambio de la API
 fetch(apiURL).then(response => response.json()).then(data => {
     rates = data.conversion_rates;
@@ -29,9 +42,8 @@ function populateSelects() {
     }
 }
 
-function cargar(){
+function cargar() {
     let random = parseInt(Math.random() * count.length);
-    console.log(count[random]);
     const fromCurrency = fromSelect.value;
     toSelect.value = [count[random]];
     amountInpunt.value = rates[fromCurrency];
@@ -39,21 +51,22 @@ function cargar(){
 }
 
 // Realizamos la conversión y actualizams el campo de resultado
-function convertCurrency() {
-    const fromCurrency = fromSelect.value;
-    const toCurrency = toSelect.value;
-    const amount = parseFloat(amountInpunt.value);
-
+function convertCurrency(value, fromCurrency, toCurrency, result) {
+    const amount = parseFloat(value.value);
     if (isNaN(amount)) {
-        resultInpunt.value = '';
+        result.value = '';
         return;
     }
-
-    const fromRate = rates[fromCurrency];
-    const toRate = rates[toCurrency];
-    
-    const result = amount / fromRate * toRate;
-    resultInpunt.value = result.toFixed(2);
+    const fromRate = rates[fromCurrency.value];
+    const toRate = rates[toCurrency.value];
+    const operation = operations(amount, fromRate, toRate);
+    result.value = operation.toFixed(2);
 }
 
-convertButton.addEventListener('click', convertCurrency);
+function selects(fromSelect, toSelect) {
+    console.log(fromSelect.value, toSelect.value);
+    amountInpunt.value = rates[fromSelect.value];
+    resultInpunt.value = rates[toSelect.value];
+}
+
+let operations = (amount, fromRate, toRate) => { return amount / fromRate * toRate };
