@@ -84,7 +84,7 @@ function addNote() {
             done: false,
         }
         notes.push(newNote);
-        insertNote(notes);
+        insertNote(filters(notes));
     } else {
         alertMessage.className = 'alert';
     }
